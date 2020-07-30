@@ -18,9 +18,11 @@ def registration_route():
         return redirect(url_for('home_route'))
     return render_template('register.html', form=form)
 
-@app.route('/login')
+@app.route('/login', methods=['GET', 'POST'])
 def login_route():
     form = LoginForm()
+    if form.validate_on_submit():
+        return redirect(url_for('home_route'))
     return render_template('login.html', form=form)
 
 if __name__ == '__main__':
