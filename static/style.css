@@ -1,7 +1,39 @@
-body{
-  margin: 0;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+* {
+  background-color: #24252A;
+}
+
+li, a {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #edf0f1;
+  text-decoration: none;
+}
+
+.nav-li, .nav-ul{
+  display: inline-block;
+  justify-content: center;
+  margin-top: 0.6em;
+}
+
+.nav1{
+  margin-left: 5em;
+}
+
+.registration {
+  display: inline-block;
+  margin-left: 35em;
   padding: 0;
-  font-size: 1em;
+}
+
+.login{
+  margin-left: 3em;
+}
+
+.search-bar{
+  margin-left: 5em;
 }
 
 .svg-icon {
@@ -33,40 +65,6 @@ svg{
 
 footer{
   border: 2px solid black;
-}
-
-#navbar{
-  border: 2px solid black;
-  padding-top: 1em;
-}
-
-.nav-ul{
-  display: flex;
-  justify-content: center;
-}
-
-.nav-li{
-  display: flex;
-  text-transform: capitalize;
-  justify-content: center;
-  margin: 0em 3em;
-  padding: 0.5em 1em;
-  border: 1px solid black;
-}
-
-.search-bar{
-  margin-right: 15em;
-  margin-left: 2em;
-  padding-right: 2em;
-}
-
-.registration{
-  border: 1px solid black;
-}
-
-.login{
-  border: 1px solid black;
-  margin: 0 0;
 }
 
 .input{
