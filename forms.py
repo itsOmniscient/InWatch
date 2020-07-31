@@ -1,6 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, BooleanField
 from wtforms.validators import DataRequired, Length, Email, EqualTo
+from imdb import IMDb
 
 class RegistrationForm(FlaskForm):
     username = StringField('Корисничко име', validators=[DataRequired(), Length(min=4, max=15)])
@@ -14,3 +15,6 @@ class LoginForm(FlaskForm):
     password = PasswordField('Лозинка', validators=[DataRequired()])
     button = BooleanField('Запамти ме')
     submit = SubmitField('Најава')
+
+class IMDB_movies():
+    ia = IMDb()

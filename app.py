@@ -1,5 +1,6 @@
 from flask import Flask, render_template, flash, redirect, url_for
-from forms import RegistrationForm, LoginForm
+from forms import RegistrationForm, LoginForm, IMDB_movies
+from imdb import IMDb
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = '90991386503f7cbfad768b9173025cdd' #yea i know this isnt safe but its a school project
@@ -8,7 +9,8 @@ app.config['SECRET_KEY'] = '90991386503f7cbfad768b9173025cdd' #yea i know this i
 @app.route('/')
 @app.route('/home')
 def home_route():
-    return render_template('index.html')
+    m = IMDB_movies()
+    return render_template('index.html', m=m)
 
 @app.route('/register', methods=['GET', 'POST'])
 def registration_route():
