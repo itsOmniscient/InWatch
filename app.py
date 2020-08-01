@@ -1,9 +1,9 @@
+import os
 from flask import Flask, render_template, flash, redirect, url_for
 from forms import RegistrationForm, LoginForm
 app = Flask(__name__)
 
-app.config['SECRET_KEY'] = '90991386503f7cbfad768b9173025cdd' #yea i know this isnt safe but its a school project
-# so i will leave it like this for now and use github secrets later :)
+app.config['SECRET_KEY'] = os.getenv("CSRF_SECRET_KEY")
 
 @app.route('/')
 @app.route('/home')
