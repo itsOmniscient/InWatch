@@ -1,4 +1,9 @@
 {% extends "layout.html" %}
 {% block content %}
-<p>This is only for the homepage</p>
+{% for movie in movie.popular() %}
+  <div>
+    <img class="image-url" src="https://image.tmdb.org/t/p/w185_and_h278_bestv2{{ movie.poster_path }}">
+    <p class="movie-title">{{ movie.title }}</p>
+    </div>
+{% endfor %}
 {% endblock content %}
