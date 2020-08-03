@@ -1,6 +1,10 @@
 import os
 from flask import Flask, render_template, flash, redirect, url_for
 from forms import RegistrationForm, LoginForm
+from tmdbv3api import TMDb, Movie
+tmdb = TMDb()
+tmdb.api_key = os.getenv("TMDB_API_KEY")
+
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = os.getenv("CSRF_SECRET_KEY")
@@ -8,7 +12,8 @@ app.config['SECRET_KEY'] = os.getenv("CSRF_SECRET_KEY")
 @app.route('/')
 @app.route('/home')
 def home_route():
-    return render_template('index.html')
+    movie = Movie()
+    return render_template('index.html', movie=movie)
 
 @app.route('/register', methods=['GET', 'POST'])
 def registration_route():
