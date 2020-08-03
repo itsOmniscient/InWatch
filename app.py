@@ -3,7 +3,7 @@ from flask import Flask, render_template, flash, redirect, url_for
 from forms import RegistrationForm, LoginForm
 from tmdbv3api import TMDb, Movie
 tmdb = TMDb()
-tmdb.api_key = os.getenv("TMDB_API_KEY")
+tmdb.api_key = os.getenv("api_key")
 
 app = Flask(__name__)
 
