@@ -1,9 +1,11 @@
 {% extends "layout.html" %}
 {% block content %}
 {% for movie in movie.popular() %}
-  <div>
+<ul class="movie-ul">
+  <li class="movie-li">
     <img class="image-url" src="https://image.tmdb.org/t/p/w185_and_h278_bestv2{{ movie.poster_path }}">
-    <p class="movie-title">{{ movie.title }}</p>
-    </div>
+    <p class="movie-title">{{ movie.title }} | {{ movie.release_date[0:4] }}</p>
+    </li>
+  </ul>
 {% endfor %}
 {% endblock content %}
