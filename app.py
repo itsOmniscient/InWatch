@@ -29,5 +29,9 @@ def login_route():
         return redirect(url_for('home_route'))
     return render_template('login.html', form=form)
 
+@app.route("/movie/<movie_id>/")
+def movie_route(movie_id):
+    return render_template('movie.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
