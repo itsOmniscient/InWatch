@@ -5,11 +5,24 @@
   padding: 0;
 }
 
+body{
+  background-color: #262729;
+}
+
+p, label, h3{
+  color: white;
+}
+
 li, a {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 1em;
   text-decoration: none;
+}
+
+#navbar{
+  border-bottom: 2px solid;
+  color: #0349fc;
 }
 
 .nav-li, .nav-ul{
@@ -64,9 +77,67 @@ svg{
 }
 
 footer{
-  border: 2px solid black;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  color: #0349fc;
 }
 
 .input{
   display: block;
+}
+
+.h3-popular{
+  margin-left: 5.5%;
+  margin-top: 30px;
+  margin-bottom: 0px;
+}
+
+.width_height{
+  margin: 0 auto;
+  display: inline-block;
+  justify-content: center;
+  vertical-align: top;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.width_height img{
+  width: 160px;
+  margin-left: 7px;
+}
+
+.movie-details{
+  width: 160px;
+  margin-left: 7px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 70px;
+}
+
+body .carousel-control-prev-icon,
+body .carousel-control-next-icon{
+  background-color:black;
+}
+
+.container1{
+  width: 90%;
+  height: 400px;
+  margin-left: 5%;
+}
+
+.carousel-control-prev, .carousel-control-next{
+  border: 3px solid;
+  color: #0349fc;
+  width: 4%;
+  height: 200px;
+  margin-top: 2%;
+  border-radius: 10px;
+}
+
+.carousel-control-next{
+  margin-right: 0.5%;
+}
+
+.carousel-control-prev{
+  margin-left: 0.5%;
 }
