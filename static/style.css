@@ -116,7 +116,6 @@ footer{
 
 body .carousel-control-prev-icon,
 body .carousel-control-next-icon{
-  background-color:black;
 }
 
 .container1{
@@ -126,8 +125,7 @@ body .carousel-control-next-icon{
 }
 
 .carousel-control-prev, .carousel-control-next{
-  border: 3px solid;
-  color: #0349fc;
+  border: 3px solid #0349fc;
   width: 4%;
   height: 200px;
   margin-top: 2%;
@@ -140,4 +138,50 @@ body .carousel-control-next-icon{
 
 .carousel-control-prev{
   margin-left: 0.5%;
+}
+
+.h3-login-register{
+  margin-top: 25px;
+  margin-bottom: 50px;
+}
+
+.h3-login-register, .form{
+  display: flex;
+  justify-content: center;
+}
+
+.input{
+  width: 300px;
+}
+
+.username, .email, .password, .password-confirm{
+  margin-bottom: 25px;
+}
+
+.submit-btn-register-div, .submit-btn-login-div{
+  display: block;
+  position: relative;
+  margin-top: 15%;
+}
+
+.submit-btn-register-div{
+  margin-bottom: 85%;
+  left: 35px;
+}
+
+.submit-btn-login-div{
+  margin-bottom: 122.5%;
+  left: 75px;
+}
+
+.submit-btn{
+  color: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 5px 50px;
+  background-color: #262729;
+}
+
+.submit-btn:hover{
+  border: 1px solid #0349fc;
 }

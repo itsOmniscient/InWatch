@@ -1,12 +1,11 @@
 {% extends "layout.html" %}
   {% block content %}
-  <h3>Register today!</h3>
+  <h3 class="h3-login-register">Регистрирај се</h3>
   <form class="form" action="" method="POST">
     {{ form.hidden_tag() }}
     <fieldset>
       <div class="username">
         {{ form.username.label(class="label") }}
-
         {% if form.username.errors %}
           {{ form.username(class="input") }}
           <div>
@@ -57,8 +56,8 @@
                 {{ form.confirm_pass(class="input") }}
               {% endif %}
               </div>
-              <div class="submit-btn">
-                {{ form.submit() }}
+              <div class="submit-btn-register-div">
+                {{ form.submit(class="submit-btn") }}
                 </div>
     </fieldset>
   </form>
