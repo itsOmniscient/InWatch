@@ -31,7 +31,9 @@ def login_route():
 
 @app.route("/movie/<movie_id>/")
 def movie_route(movie_id):
-    return render_template('movie.html')
+    movie = Movie()
+    m_detail = movie.details(movie_id)
+    return render_template('movie.html', movie=movie, m_detail=m_detail)
 
 if __name__ == '__main__':
     app.run(debug=True)
