@@ -1,4 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
-<p>This is for each movie</p>
+<p>This is the id of the movie -> {{ m_detail.id }}</p>
+<p>The name of the movie is -> "{{ m_detail.title }}"</p>
+<p>Movie overview: {{ m_detail.overview }}</p>
 {% endblock content %}
