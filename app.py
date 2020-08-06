@@ -1,7 +1,9 @@
 import os
-from flask import Flask, render_template, flash, redirect, url_for
+from flask import Flask, render_template, flash, redirect, url_for, request
 from forms import RegistrationForm, LoginForm
 from tmdbv3api import TMDb, Movie
+import requests
+import json
 tmdb = TMDb()
 tmdb.api_key = os.getenv("api_key")
 
@@ -29,10 +31,13 @@ def login_route():
         return redirect(url_for('home_route'))
     return render_template('login.html', form=form)
 
-@app.route("/movie/<movie_id>/")
+@app.route("/movie/<movie_id>/", methods=['GET', 'POST'])
 def movie_route(movie_id):
     movie = Movie()
     m_detail = movie.details(movie_id)
+    api_key = tmdb.api_key
+    r = requests.get('https://api.themoviedb.org/3/movie/'+str(movie_id) +str('?api_key=') +str(api_key))
+    j = r.json()
     return render_template('movie.html', movie=movie, m_detail=m_detail)
 
 if __name__ == '__main__':
