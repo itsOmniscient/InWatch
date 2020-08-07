@@ -10,7 +10,7 @@ body{
   background-color: #262729;
 }
 
-p, label, h3{
+p, label, h3, span{
   color: white;
 }
 
