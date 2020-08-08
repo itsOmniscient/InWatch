@@ -11,8 +11,8 @@ app = Flask(__name__)
 
 app.config['SECRET_KEY'] = os.getenv("CSRF_SECRET_KEY")
 
-@app.route('/')
-@app.route('/home')
+@app.route('/', methods=['GET', 'POST'])
+@app.route('/home', methods=['GET', 'POST'])
 def home_route():
     movie = Movie()
     return render_template('index.html', movie=movie)
@@ -39,6 +39,11 @@ def movie_route(movie_id):
     r = requests.get('https://api.themoviedb.org/3/movie/'+str(movie_id) +str('?api_key=') +str(api_key))
     j = r.json()
     return render_template('movie.html', movie=movie, m_detail=m_detail)
+
+@app.route('/search/', methods=['GET', 'POST'])
+def search_route():
+    movie = Movie()
+    return render_template('search.html', movie=movie)
 
 if __name__ == '__main__':
     app.run(debug=True)
