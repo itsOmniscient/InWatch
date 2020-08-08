@@ -40,10 +40,11 @@ def movie_route(movie_id):
     j = r.json()
     return render_template('movie.html', movie=movie, m_detail=m_detail)
 
-@app.route('/search/', methods=['GET', 'POST'])
-def search_route():
+@app.route('/search/<term>', methods=['GET', 'POST'])
+def search_route(term):
     movie = Movie()
-    return render_template('search.html', movie=movie)
+    m_search = movie.search(term)
+    return render_template('search.html', movie=movie, m_search=m_search)
 
 if __name__ == '__main__':
     app.run(debug=True)

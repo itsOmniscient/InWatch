@@ -229,3 +229,18 @@ body .carousel-control-next-icon{
   width: 185px;
   height: 278px;
 }
+
+.search-container{
+  margin: 0 auto;
+  display: inline-block;
+  justify-content: center;
+  vertical-align: top;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 17px;
+}
+
+.search-container img{
+  width: 160px;
+  margin-left: 7px;
+}
