@@ -185,3 +185,38 @@ body .carousel-control-next-icon{
 .submit-btn:hover{
   border: 1px solid #0349fc;
 }
+
+.movie_detail_img{
+  width: 300px;
+  height: 450px;
+}
+
+.movie-container{
+  display: flex;
+  width: 50%;
+  margin-left: 24%;
+  margin-bottom: 214px;
+}
+
+.h3-movie-title{
+  margin-top: 20px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.movie-table{
+  display: table;
+  color: white;
+}
+
+.movie-description{
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-right: 20px;
+}
+
+.movie-td{
+  color: #7c7d7c;
+  width: 50px;
+  padding-right: 50px;
+}

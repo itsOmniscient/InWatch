@@ -1,6 +1,30 @@
 {% extends "layout.html" %}
 {% block content %}
-<p>This is the id of the movie -> {{ m_detail.id }}</p>
-<p>The name of the movie is -> "{{ m_detail.title }}"</p>
-<p>Movie overview: {{ m_detail.overview }}</p>
+<h3 class="h3-movie-title">{{ m_detail.title }}</h3>
+<div class="movie-container">
+  <div class="movie-cover">
+  <img class="movie_detail_img" src="https://image.tmdb.org/t/p/w780{{ m_detail.poster_path }}">
+  </div>
+  <div class="movie-description">
+  <p>{{ m_detail.overview }}</p>
+  <table class="movie-table">
+    <tr class="movie-tr">
+      <td class="movie-td">Почеток на филмот:</td>
+      <td class="movie-td2">{{ m_detail.release_date }}</td>
+      </tr>
+      <tr class="movie-tr">
+        <td class="movie-td">Времетраење:</td>
+        <td class="movie-td2">{{ m_detail.runtime }} минути</td>
+        </tr>
+        <tr class="movie-tr">
+          <td class="movie-td">Популарност:</td>
+          <td class="movie-td2">{{ m_detail.popularity }}</td>
+          </tr>
+          <tr class="movie-tr">
+            <td class="movie-td">Рејтинг:</td>
+            <td class="movie-td2">{{ m_detail.vote_average }}</td>
+            </tr>
+    </table>
+  </div>
+  </div>
 {% endblock content %}
