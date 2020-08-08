@@ -224,3 +224,8 @@ body .carousel-control-next-icon{
   width: 50px;
   padding-right: 50px;
 }
+
+.img-not-found{
+  width: 185px;
+  height: 278px;
+}
