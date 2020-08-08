@@ -170,7 +170,7 @@ body .carousel-control-next-icon{
 
 .submit-btn-register-div{
   margin-bottom: 85%;
-  left: 35px;
+  left: 34px;
 }
 
 .submit-btn-login-div{
@@ -206,7 +206,6 @@ body .carousel-control-next-icon{
   margin-top: 20px;
   margin-bottom: 40px;
   text-align: center;
-  margin-left: 105px;
 }
 
 .movie-table{
@@ -224,6 +223,10 @@ body .carousel-control-next-icon{
   color: #7c7d7c;
   width: 50px;
   padding-right: 50px;
+}
+
+.movie-td, .movie-td2{
+  padding-top: 10px;
 }
 
 .img-not-found{
