@@ -111,7 +111,11 @@ footer{
   margin-left: 7px;
   overflow: hidden;
   text-overflow: ellipsis;
-  height: 70px;
+  height: 80px;
+}
+
+.movie-details-text{
+  margin-top: 10px;
 }
 
 body .carousel-control-prev-icon,
