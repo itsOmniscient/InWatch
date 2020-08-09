@@ -1,10 +1,11 @@
 
 import os
 from flask import render_template, flash, redirect, url_for, request
-from movies_webstore import app
+from movies_webstore import app, db, bcrypt
 from movies_webstore.forms import RegistrationForm, LoginForm
 from movies_webstore.models import User
 from tmdbv3api import TMDb, Movie
+from flask_login import login_user, current_user, logout_user
 import requests
 import json
 
@@ -19,17 +20,39 @@ def home_route():
 
 @app.route('/register', methods=['GET', 'POST'])
 def registration_route():
+    if current_user.is_authenticated:
+        return redirect(url_for('home_route'))
     form = RegistrationForm()
     if form.validate_on_submit():
-        return redirect(url_for('home_route'))
+        hashed_pw = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
+        user = User(username=form.username.data, email=form.email.data, password=hashed_pw)
+        db.session.add(user)
+        db.session.commit()
+        return redirect(url_for('login_route'))
     return render_template('register.html', form=form)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login_route():
+    if current_user.is_authenticated:
+        return redirect(url_for('home_route'))
     form = LoginForm()
     if form.validate_on_submit():
-        return redirect(url_for('home_route'))
+        user = User.query.filter_by(email = form.email.data).first()
+        if user and bcrypt.check_password_hash(user.password, form.password.data):
+            login_user(user, remember=form.button.data)
+            return redirect(url_for('home_route'))
+        else:
+            return render_template('login.html', form=form)
     return render_template('login.html', form=form)
+
+@app.route('/logout')
+def logout_route():
+    logout_user()
+    return redirect(url_for('home_route'))
+
+@app.route('/profile')
+def user_profile():
+    return render_template('profile.html')
 
 @app.route("/movie/<movie_id>/", methods=['GET', 'POST'])
 def movie_route(movie_id):

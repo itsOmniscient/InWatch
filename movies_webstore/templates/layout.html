@@ -20,8 +20,12 @@
         <li class="nav-li nav1"><a href="/">Мој Профил</a></li>
         <li class="nav-li nav1"><a href="#contact">Контакт</a></li>
         <input type="text" class="search-bar" placeholder="Барај...">
+        {% if current_user.is_authenticated %}
+          <li class="nav-li registration"><a href="/logout">Одјави се</a></li>
+        {% else %}
         <li class="nav-li registration"><a href="/register">Регистрација</a></li>
         <li class="nav-li login"<a href="/login"><a href="/login">Најава</a></li>
+        {% endif %}
       </ul>
       </nav>
       </header>
