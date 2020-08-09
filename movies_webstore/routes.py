@@ -1,15 +1,15 @@
+
 import os
-from flask import Flask, render_template, flash, redirect, url_for, request
-from forms import RegistrationForm, LoginForm
+from flask import render_template, flash, redirect, url_for, request
+from movies_webstore import app
+from movies_webstore.forms import RegistrationForm, LoginForm
+from movies_webstore.models import User
 from tmdbv3api import TMDb, Movie
 import requests
 import json
+
 tmdb = TMDb()
 tmdb.api_key = os.getenv("api_key")
-
-app = Flask(__name__)
-
-app.config['SECRET_KEY'] = os.getenv("CSRF_SECRET_KEY")
 
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/home', methods=['GET', 'POST'])
@@ -47,6 +47,3 @@ def search_route(term):
     movie = Movie()
     m_search = movie.search(term)
     return render_template('search.html', movie=movie, m_search=m_search)
-
-if __name__ == '__main__':
-    app.run(debug=True)

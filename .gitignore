@@ -1,4 +1,4 @@
 env
 **/__pycache__
 .env
-settings.py
+movies_webstore/database/
