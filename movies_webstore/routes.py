@@ -5,7 +5,7 @@ from movies_webstore import app, db, bcrypt
 from movies_webstore.forms import RegistrationForm, LoginForm
 from movies_webstore.models import User
 from tmdbv3api import TMDb, Movie
-from flask_login import login_user, current_user, logout_user
+from flask_login import login_user, current_user, logout_user, login_required
 import requests
 import json
 
@@ -40,7 +40,8 @@ def login_route():
         user = User.query.filter_by(email = form.email.data).first()
         if user and bcrypt.check_password_hash(user.password, form.password.data):
             login_user(user, remember=form.button.data)
-            return redirect(url_for('home_route'))
+            next_page = request.args.get('next')
+            return redirect(next_page) if next_page else redirect(url_for('home_route'))
         else:
             return render_template('login.html', form=form)
     return render_template('login.html', form=form)
@@ -50,11 +51,13 @@ def logout_route():
     logout_user()
     return redirect(url_for('home_route'))
 
-@app.route('/profile')
+@app.route('/account')
+@login_required
 def user_profile():
-    return render_template('profile.html')
+    return render_template('account.html')
 
 @app.route("/movie/<movie_id>/", methods=['GET', 'POST'])
+@login_required
 def movie_route(movie_id):
     movie = Movie()
     m_detail = movie.details(movie_id)
