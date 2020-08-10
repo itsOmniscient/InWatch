@@ -4,7 +4,7 @@ from flask import render_template, flash, redirect, url_for, request
 from movies_webstore import app, db, bcrypt
 from movies_webstore.forms import RegistrationForm, LoginForm
 from movies_webstore.models import User
-from tmdbv3api import TMDb, Movie
+from tmdbv3api import TMDb, Movie, Discover
 from flask_login import login_user, current_user, logout_user, login_required
 import requests
 import json
@@ -76,4 +76,5 @@ def search_route(term):
 @app.route('/category', methods=['GET', 'POST'])
 def category_route():
     movie = Movie()
-    return render_template('categories.html', movie=movie)
+    discover = Discover()
+    return render_template('categories.html', movie=movie, discover=discover)
