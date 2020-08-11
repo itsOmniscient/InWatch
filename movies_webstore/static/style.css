@@ -46,7 +46,13 @@ li, a {
 }
 
 .search-bar{
+  display: inline-block;
   margin-left: 5em;
+}
+
+.form-control{
+  padding: 0;
+  padding-left: 5px;
 }
 
 .svg-icon {

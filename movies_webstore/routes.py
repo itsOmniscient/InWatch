@@ -67,11 +67,12 @@ def movie_route(movie_id):
     genre = j['genres'][0]['name']
     return render_template('movie.html', movie=movie, m_detail=m_detail, genre=genre)
 
-@app.route('/search/<term>', methods=['GET', 'POST'])
-def search_route(term):
+@app.route('/search/', methods=['GET', 'POST'])
+def search():
     movie = Movie()
-    m_search = movie.search(term)
-    return render_template('search.html', movie=movie, m_search=m_search)
+    user_search = request.args['search']
+    m_search = movie.search(user_search)
+    return render_template('search.html', movie=movie, search=user_search, m_search=m_search)
 
 @app.route('/category/', methods=['GET', 'POST'])
 def category_route():

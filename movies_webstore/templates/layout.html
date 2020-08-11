@@ -24,7 +24,9 @@
         <li class="nav-li nav1"><a href="/category">Категории</a></li>
         <li class="nav-li nav1"><a href="/account">Мој Профил</a></li>
         <li class="nav-li nav1"><a href="#contact">Контакт</a></li>
-        <input type="text" class="search-bar" placeholder="Барај...">
+        <form action="{{ url_for('search') }}" class="search-bar">
+          <input class="form-control" name="search" type="search" placeholder="Барај...">
+        </form>
         {% if current_user.is_authenticated %}
           <li class="nav-li registration"><a href="/logout">Одјави се</a></li>
         {% else %}
