@@ -77,8 +77,7 @@ def search_route(term):
 def category_route():
     movie = Movie()
     discover = Discover()
-    action = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 28, 'page': 1})
-    return render_template('categories.html', movie=movie, discover=discover, action=action)
+    return render_template('categories.html', movie=movie, discover=discover)
 
 @app.route('/category/action/', methods=['GET', 'POST'])
 def action_movies():
