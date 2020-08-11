@@ -73,7 +73,7 @@ def search_route(term):
     m_search = movie.search(term)
     return render_template('search.html', movie=movie, m_search=m_search)
 
-@app.route('/category', methods=['GET', 'POST'])
+@app.route('/category/', methods=['GET', 'POST'])
 def category_route():
     movie = Movie()
     discover = Discover()
