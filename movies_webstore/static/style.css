@@ -130,7 +130,7 @@ body .carousel-control-next-icon{
 
 .container1{
   width: 90%;
-  height: 400px;
+  height: 380px;
   margin-left: 5%;
 }
 
@@ -235,9 +235,9 @@ body .carousel-control-next-icon{
   padding-top: 10px;
 }
 
-.img-not-found{
-  width: 185px;
-  height: 278px;
+.width_height  img{
+  width: 160px;
+  height: 280px;
 }
 
 .search-container{

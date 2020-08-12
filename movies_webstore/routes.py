@@ -57,7 +57,6 @@ def user_profile():
     return render_template('account.html')
 
 @app.route("/movie/<movie_id>/", methods=['GET', 'POST'])
-@login_required
 def movie_route(movie_id):
     movie = Movie()
     m_detail = movie.details(movie_id)
