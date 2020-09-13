@@ -64,7 +64,10 @@ def movie_route(movie_id):
     api_key = tmdb.api_key
     r = requests.get('https://api.themoviedb.org/3/movie/'+str(movie_id) +str('?api_key=') +str(api_key))
     j = r.json()
-    genre = j['genres'][0]['name']
+    try:
+        genre = j['genres'][0]['name']
+    except:
+        genre = "#"
     return render_template('movie.html', movie=movie, m_detail=m_detail, genre=genre)
 
 @app.route('/search/', methods=['GET', 'POST'])
