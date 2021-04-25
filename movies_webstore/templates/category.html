@@ -5,7 +5,7 @@
 {% block content %}
 {% for movie in movies %}
 <div class="search-container">
-  <a href="/movie/{{ movie.id }}/" target="_blank"><img class="img-not-found" src="https://image.tmdb.org/t/p/w185_and_h278_bestv2{{ movie.poster_path }}" alt="Not Found" onerror=this.src="/static/not-found.png"></a>
+  <a href="/movie/{{ movie.id }}/" target="_self"><img class="img-not-found" src="https://image.tmdb.org/t/p/w185_and_h278_bestv2{{ movie.poster_path }}" alt="Not Found" onerror=this.src="/static/not-found.png"></a>
   <div class="movie-details">
   <p class="movie-details-text">{{ movie.title }} {{ movie.release_date[0:4] }}</p>
   </div>
@@ -13,7 +13,7 @@
 {% endfor %}
 {% for movie in movies2 %}
 <div class="search-container">
-  <a href="/movie/{{ movie.id }}/" target="_blank"><img class="img-not-found" src="https://image.tmdb.org/t/p/w185_and_h278_bestv2{{ movie.poster_path }}" alt="Not Found" onerror=this.src="/static/not-found.png"></a>
+  <a href="/movie/{{ movie.id }}/" target="_self"><img class="img-not-found" src="https://image.tmdb.org/t/p/w185_and_h278_bestv2{{ movie.poster_path }}" alt="Not Found" onerror=this.src="/static/not-found.png"></a>
   <div class="movie-details">
   <p class="movie-details-text">{{ movie.title }} {{ movie.release_date[0:4] }}</p>
   </div>

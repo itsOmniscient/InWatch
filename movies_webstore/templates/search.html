@@ -5,9 +5,10 @@
 {% block content %}
 {% for result in m_search %}
 <div class="search-container">
-  <a href="/movie/{{ result.id }}/" target="_blank"><img class="img-not-found" src="https://image.tmdb.org/t/p/w185_and_h278_bestv2{{ result.poster_path }}" alt="Not Found" onerror=this.src="/static/not-found.png"></a>
+  <a href="/movie/{{ result.id }}/" target="_self"><img class="img-not-found" src="https://image.tmdb.org/t/p/w185_and_h278_bestv2{{ result.poster_path }}" alt="Not Found" onerror=this.src="/static/not-found.png"></a>
   <div class="movie-details">
-  <p class="movie-details-text">{{ result.title }}{{ result.release_date }}</p>
+  <p class="movie-details-text">{{ result.title }}</p>
+  <p class="movie-details-text-search">{{ result.release_date[:4] }}</p>
   </div>
 </div>
 {% endfor %}
