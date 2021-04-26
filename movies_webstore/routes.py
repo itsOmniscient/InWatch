@@ -65,10 +65,18 @@ def movie_route(movie_id):
     r = requests.get('https://api.themoviedb.org/3/movie/'+str(movie_id) +str('?api_key=') +str(api_key))
     j = r.json()
     try:
-        genre = j['genres'][0]['name']
+        genre = j['genres'][0]['name'] +" |"
     except:
         genre = "#"
-    return render_template('movie.html', movie=movie, m_detail=m_detail, genre=genre)
+    try:
+        genre_2 = j['genres'][1]['name'] +" |"
+    except:
+        genre_2 = ''
+    try:
+        genre_3 = j['genres'][2]['name'] +" |"
+    except:
+        genre_3 = '' 
+    return render_template('movie.html', movie=movie, m_detail=m_detail, genre=genre, genre_2=genre_2, genre_3=genre_3)
 
 @app.route('/search/', methods=['GET', 'POST'])
 def search():
