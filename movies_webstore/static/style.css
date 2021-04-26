@@ -263,19 +263,26 @@ body .carousel-control-next-icon{
   margin-bottom: 60px;
 }
 
-.flex-container > div {
+.flex-container > a {
+  display: block;
   border: 1px solid #0349fc;
-  border-radius: 30px;
-  color: white;
   width: 220px;
   height: 150px;
   margin: 30px;
   text-align: center;
-  line-height: 135px;
   font-size: 20px;
+  text-decoration: none;
 }
 
-.flex-container > div > a {
+.flex-container > a > div {
+  margin-top: 50px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.flex-container > a:hover{
+  color: #262729;
+  background-color: #0349fc;
 }
 
 .movie-details-text-search{
