@@ -10,6 +10,46 @@ p, label, h3, span, h4{
   color: white;
 }
 
+header{
+  border-bottom: 1px solid white;
+  padding-bottom: 10px;
+}
+
+.header_container{
+  display: flex;
+  position: relative;
+}
+
+.header_container > li {
+  display: flex;
+}
+
+.navbar_menu{
+  margin-top: 40px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.search-bar{
+  margin-top: 40px;
+  margin-left: 20px;
+}
+
+.register_nav{
+  margin-top: 40px;
+  position: absolute;
+  right:50px;
+}
+
+.login_nav{
+  margin-top: 40px;
+  position: absolute;
+  right: 170px;
+}
+
+.header_container > li > a{
+}
+
 li, a {
   font-weight: 500;
   font-size: 1em;
@@ -17,50 +57,8 @@ li, a {
   color: white;
 }
 
-#navbar{
-  display: flex;
-  color: #0349fc;
-  border-bottom: 1px solid white;
-}
-
 a:hover{
   text-decoration: none;
-}
-
-li{
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
-  width: 150px;
-}
-
-ul{
-  display: flex;
-}
-
-.search-bar{
-  margin-top: 40px;
-  width: 200px;
-  margin-left: 20px;
-}
-
-.login_nav{
-  display: flex;
-  padding-left: 50px;
-}
-
-.login_nav_2{
-  display: flex;
-  margin: 0 !important;
-}
-
-.login_nav_reg_login{
-  display: flex;
-  margin-left: 30%;
-}
-
-.logout_nav{
-  margin-left: 50%;
 }
 
 .form-control{
@@ -217,11 +215,15 @@ footer{
 }
 
 .movie_detail_img{
-  width: 300px;
+  width: 100%;
   height: 600px;
   padding-bottom: 5px;
   padding-left: 10px;
   padding-right: 10px;
+}
+
+.detail_2{
+  width: 300px;
 }
 
 .poster_container{
@@ -236,7 +238,7 @@ footer{
 
 .movie_detail_img_2{
   display: block;
-  width:250px;
+  width:100%;
   height:300px;
   transform: scale(1);
   padding-top: 5px;
@@ -388,7 +390,8 @@ body{
 .logo2{
   margin-top: 10px;
   margin-left: 10px;
-  width: 180px;
+  margin-right: 50px;
+  width: 180x;
   height: 90px;
 }
 

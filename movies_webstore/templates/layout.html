@@ -20,32 +20,22 @@
   </head>
   <body>
     <header>
-    <nav id=navbar>
-      <ul>
-        <div>
+      <div class="header_container">
         <img class="logo2" src="{{url_for('static', filename='logo.png')}}" alt="">
-      </div>
-        <div class="login_nav">
-        <li><a href="/home">HOMEPAGE</a></li>
-        <li><a href="/category">CATEGORIES</a></li>
-        <li><a href="/account">MY PROFILE</a></li>
-        <li><a href="#contact">CONTACT</a></li>
+        <li class="navbar_menu"><a href="/home">HOMEPAGE</a></li>
+        <li class="navbar_menu"><a href="/category">CATEGORIES</a></li>
+        <li class="navbar_menu"><a href="/account">MY PROFILE</a></li>
+        <li class="navbar_menu"><a href="#contact">CONTACT</a></li>
         <form action="{{ url_for('search') }}" class="search-bar">
           <input class="form-control" name="search" type="search" placeholder="Search...">
         </form>
-      </div>
         {% if current_user.is_authenticated %}
-        <div  class="login_nav logout_nav">
-          <li><a href="/logout">LOGOUT</a></li>
-        </div>
         {% else %}
-        <div class="login_nav login_nav_reg_login">
-        <li><a href="/register">REGISTER</a></li>
-        <li><a href="/login"><a href="/login">LOGIN</a></li>
+        <li class="register_nav" ><a href="/register">REGISTER</a></li>
+        <li class="login_nav"><a href="/login"><a href="/login">LOGIN</a></li>
+      </div>
       </div>
         {% endif %}
-      </ul>
-      </nav>
       </header>
       {% block content %}
       {% endblock content %}
