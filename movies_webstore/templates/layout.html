@@ -30,6 +30,7 @@
           <input class="form-control" name="search" type="search" placeholder="Search...">
         </form>
         {% if current_user.is_authenticated %}
+        <li class="register_nav" ><a href="/logout">LOGOUT</a></li>
         {% else %}
         <li class="register_nav" ><a href="/register">REGISTER</a></li>
         <li class="login_nav"><a href="/login"><a href="/login">LOGIN</a></li>
