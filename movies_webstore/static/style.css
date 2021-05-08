@@ -6,11 +6,7 @@
   font-family: "Montserrat", sans-serif;
 }
 
-body{
-  background-color: #262729;
-}
-
-p, label, h3, span{
+p, label, h3, span, h4{
   color: white;
 }
 
@@ -18,36 +14,53 @@ li, a {
   font-weight: 500;
   font-size: 1em;
   text-decoration: none;
+  color: white;
 }
 
 #navbar{
-  border-bottom: 2px solid;
+  display: flex;
   color: #0349fc;
+  border-bottom: 1px solid white;
 }
 
-.nav-li, .nav-ul{
-  display: inline-block;
+a:hover{
+  text-decoration: none;
+}
+
+li{
+  display: flex;
   justify-content: center;
-  margin-top: 0.6em;
+  margin-top: 40px;
+  width: 150px;
 }
 
-.nav1{
-  margin-left: 5em;
-}
-
-.registration {
-  display: inline-block;
-  margin-left: 35em;
-  padding: 0;
-}
-
-.login{
-  margin-left: 3em;
+ul{
+  display: flex;
 }
 
 .search-bar{
-  display: inline-block;
-  margin-left: 5em;
+  margin-top: 40px;
+  width: 200px;
+  margin-left: 20px;
+}
+
+.login_nav{
+  display: flex;
+  padding-left: 50px;
+}
+
+.login_nav_2{
+  display: flex;
+  margin: 0 !important;
+}
+
+.login_nav_reg_login{
+  display: flex;
+  margin-left: 30%;
+}
+
+.logout_nav{
+  margin-left: 50%;
 }
 
 .form-control{
@@ -83,8 +96,7 @@ svg{
 }
 
 footer{
-  border-top: 2px solid;
-  border-bottom: 2px solid;
+  border-top: 1px solid white;
   color: #0349fc;
 }
 
@@ -112,6 +124,14 @@ footer{
   margin-left: 7px;
 }
 
+.width_height img:hover, .search-container img:hover{
+  border:1px solid #0349fc;
+}
+
+.width_height > a:hover, .search-container > a:hover{
+  opacity: 0.7;
+}
+
 .movie-details{
   width: 160px;
   margin-left: 7px;
@@ -124,10 +144,6 @@ footer{
   margin-top: 10px;
 }
 
-body .carousel-control-prev-icon,
-body .carousel-control-next-icon{
-}
-
 .container1{
   width: 91%;
   height: 380px;
@@ -135,11 +151,9 @@ body .carousel-control-next-icon{
 }
 
 .carousel-control-prev, .carousel-control-next{
-  border: 3px solid #0349fc;
   width: 4%;
-  height: 200px;
-  margin-top: 2%;
-  border-radius: 10px;
+  height: 300px;
+  margin-top: 20px;
 }
 
 .carousel-control-next{
@@ -148,6 +162,11 @@ body .carousel-control-next-icon{
 
 .carousel-control-prev{
   margin-left: 0.5%;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon{
+  width: 40px;
+  height: 40px;
 }
 
 .h3-login-register{
@@ -175,12 +194,13 @@ body .carousel-control-next-icon{
 }
 
 .submit-btn-register-div{
-  margin-bottom: 85%;
-  left: 34px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 225px;
 }
 
 .submit-btn-login-div{
-  margin-bottom: 122.5%;
+  margin-bottom: 339px;
   left: 75px;
 }
 
@@ -189,7 +209,7 @@ body .carousel-control-next-icon{
   border: 1px solid white;
   border-radius: 10px;
   padding: 5px 50px;
-  background-color: #262729;
+  background-color: transparent;
 }
 
 .submit-btn:hover{
@@ -198,7 +218,34 @@ body .carousel-control-next-icon{
 
 .movie_detail_img{
   width: 300px;
-  height: 450px;
+  height: 600px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.poster_container{
+  display: flex;
+  justify-content: center;
+}
+
+.poster_container_2{
+  display: flex;
+  flex-direction: column;
+}
+
+.movie_detail_img_2{
+  display: block;
+  width:250px;
+  height:300px;
+  transform: scale(1);
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.movie_detail_img:hover, .movie_detail_img_2:hover{
+  border:1px solid #0349fc;
+  opacity: 0.7;
 }
 
 .movie-container{
@@ -259,13 +306,13 @@ body .carousel-control-next-icon{
   display: flex;
   flex-wrap: wrap;
   margin-left: 7%;
-  margin-top: 60px;
-  margin-bottom: 60px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .flex-container > a {
   display: block;
-  border: 1px solid #0349fc;
+  border: 1px solid white;
   width: 220px;
   height: 150px;
   margin: 30px;
@@ -278,13 +325,91 @@ body .carousel-control-next-icon{
   margin-top: 50px;
   margin-left: 15px;
   margin-right: 15px;
+  color: white;
 }
 
 .flex-container > a:hover{
   color: #262729;
-  background-color: #0349fc;
+  background-color: rgba(5,46,211, 0.5);
 }
 
 .movie-details-text-search{
   margin-top: -17px;
+}
+
+.fa{
+  color: white;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.register_container{
+  margin: 0 auto;
+  text-align: center;
+}
+
+.register_btn{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 1.4em;
+  padding: 10px 10px;
+  border-radius: 2%;
+  background-color: #D39E05;
+  border: 1px solid #D39E05;
+  color: white;
+}
+
+.register_btn:hover{
+  background-color: transparent;
+}
+
+.register_btn > a{
+  color: white;
+  text-decoration: none;
+}
+
+.register_container_logged{
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 100px;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body{
+  background-image: url(background.jpg);
+  background-size: 50% 50%;
+  backdrop-filter: blur(1px);
+  overflow-y: scroll;
+  }
+
+.logo2{
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 180px;
+  height: 90px;
+}
+
+.text-container{
+  margin: 0 auto;
+  width: 35%;
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+  padding: 0 30px;
+}
+
+.text-container > p{
+  font-size: 1.4em;
+}
+
+.my_profile_h3{
+  margin-top: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.fav_movies{
+  margin-left: 20px;
 }

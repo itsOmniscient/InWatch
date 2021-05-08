@@ -8,6 +8,7 @@ from tmdbv3api import TMDb, Movie, Discover
 from flask_login import login_user, current_user, logout_user, login_required
 import requests
 import json
+import re
 
 tmdb = TMDb()
 tmdb.api_key = os.getenv("api_key")
@@ -31,6 +32,35 @@ def registration_route():
         return redirect(url_for('login_route'))
     return render_template('register.html', form=form)
 
+@app.route('/movieID', methods = ['GET','POST'])
+def get_movie_id():
+    favorite_moviesList = []
+    jsdata = ""
+    if current_user.is_authenticated:
+        jsdata = request.form['js_movieID']
+        user = User.query.filter(current_user.username == current_user.username).first()
+        if (user.favorite_movies == ""):
+            user.favorite_movies = jsdata
+            db.session.add(user)
+            db.session.commit()
+        else:
+            reg2 = re.compile('[0-9]*[^,]')
+            movieList2 = reg2.findall(user.favorite_movies)
+            if jsdata in movieList2:
+                movieList2.remove(jsdata)
+                user.favorite_movies = ','.join(movieList2)
+                db.session.add(user)
+                db.session.commit()
+                print("Movie deleted from favorites.")
+                return jsdata
+            else:
+                user.favorite_movies = user.favorite_movies+","+jsdata
+                db.session.add(user)
+                db.session.commit()
+                print("Movie added to favorites.")
+                return jsdata
+    return jsdata
+
 @app.route('/login', methods=['GET', 'POST'])
 def login_route():
     if current_user.is_authenticated:
@@ -52,10 +82,20 @@ def logout_route():
     logout_user()
     return redirect(url_for('home_route'))
 
-@app.route('/account')
+@app.route('/account',  methods=['GET', 'POST'])
 @login_required
 def user_profile():
-    return render_template('account.html')
+    movie = Movie()
+    api_key = tmdb.api_key
+    user_fav_movies = current_user.favorite_movies
+    reg = re.compile('[0-9]*[^,]')
+    movieList = reg.findall(user_fav_movies)
+    movieListFav = []
+    for movie in movieList:
+        r = requests.get('https://api.themoviedb.org/3/movie/'+str(movie) +str('?api_key=') +str(api_key))
+        j = r.json()
+        movieListFav.append(j)
+    return render_template('account.html', movie=movie, movieListFav=movieListFav)
 
 @app.route("/movie/<movie_id>/", methods=['GET', 'POST'])
 def movie_route(movie_id):

@@ -12,26 +12,29 @@
   <p>{{ m_detail.overview }}</p>
   <table class="movie-table">
     <tr class="movie-tr">
-      <td class="movie-td">Почеток на филмот:</td>
+      <td class="movie-td">Release Date:</td>
       <td class="movie-td2">{{ m_detail.release_date }}</td>
       </tr>
       <tr class="movie-tr">
-        <td class="movie-td">Жанр:</td>
+        <td class="movie-td">Genre:</td>
         <td class="movie-td2 genre_names">{{ genre }} {{ genre_2 }} {{ genre_3 }}</td>
         </tr>
       <tr class="movie-tr">
-        <td class="movie-td">Времетраење:</td>
-        <td class="movie-td2">{{ m_detail.runtime }} минути</td>
+        <td class="movie-td">Runtime:</td>
+        <td class="movie-td2">{{ m_detail.runtime }} minutes</td>
         </tr>
         <tr class="movie-tr">
-          <td class="movie-td">Популарност:</td>
+          <td class="movie-td">Popularity:</td>
           <td class="movie-td2">{{ m_detail.popularity }}</td>
           </tr>
           <tr class="movie-tr">
-            <td class="movie-td">Рејтинг:</td>
+            <td class="movie-td">Rating:</td>
             <td class="movie-td2">{{ m_detail.vote_average }}</td>
             </tr>
     </table>
+    <a href="#">
+      <i style="font-size:24px" class="fa" onclick="AddFavorites()">&#xf004;</i>
+      </a>
   </div>
   </div>
 {% endblock content %}
