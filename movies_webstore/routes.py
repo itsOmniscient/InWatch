@@ -98,6 +98,7 @@ def user_profile():
     return render_template('account.html', movie=movie, movieListFav=movieListFav)
 
 @app.route("/movie/<movie_id>/", methods=['GET', 'POST'])
+@login_required
 def movie_route(movie_id):
     movie = Movie()
     m_detail = movie.details(movie_id)
@@ -119,6 +120,7 @@ def movie_route(movie_id):
     return render_template('movie.html', movie=movie, m_detail=m_detail, genre=genre, genre_2=genre_2, genre_3=genre_3)
 
 @app.route('/search/', methods=['GET', 'POST'])
+@login_required
 def search():
     movie = Movie()
     user_search = request.args['search']
@@ -132,6 +134,7 @@ def category_route():
     return render_template('categories.html', movie=movie, discover=discover)
 
 @app.route('/category/action/', methods=['GET', 'POST'])
+@login_required
 def action_movies():
     movie = Movie()
     discover = Discover()
@@ -142,6 +145,7 @@ def action_movies():
     return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Акција")
 
 @app.route('/category/adventure/', methods=['GET', 'POST'])
+@login_required
 def adventure_movies():
     movie = Movie()
     discover = Discover()
@@ -152,6 +156,7 @@ def adventure_movies():
     return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Авантура")
 
 @app.route('/category/animation/', methods=['GET', 'POST'])
+@login_required
 def animation_movies():
     movie = Movie()
     discover = Discover()
@@ -162,6 +167,7 @@ def animation_movies():
     return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Анимација")
 
 @app.route('/category/comedy/', methods=['GET', 'POST'])
+@login_required
 def comedy_movies():
     movie = Movie()
     discover = Discover()
@@ -172,6 +178,7 @@ def comedy_movies():
     return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Комедија")
 
 @app.route('/category/crime/', methods=['GET', 'POST'])
+@login_required
 def crime_movies():
     movie = Movie()
     discover = Discover()
@@ -182,6 +189,7 @@ def crime_movies():
     return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Криминалистика")
 
 @app.route('/category/documentary/', methods=['GET', 'POST'])
+@login_required
 def documentary_movies():
     movie = Movie()
     discover = Discover()
@@ -192,6 +200,7 @@ def documentary_movies():
     return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Документарни")
 
 @app.route('/category/drama/', methods=['GET', 'POST'])
+@login_required
 def drama_movies():
     movie = Movie()
     discover = Discover()
@@ -202,6 +211,7 @@ def drama_movies():
     return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Драма")
 
 @app.route('/category/family/', methods=['GET', 'POST'])
+@login_required
 def family_movies():
     movie = Movie()
     discover = Discover()
@@ -212,6 +222,7 @@ def family_movies():
     return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Фамилијарни")
 
 @app.route('/category/fantasy/', methods=['GET', 'POST'])
+@login_required
 def fantasy_movies():
     movie = Movie()
     discover = Discover()
@@ -222,6 +233,7 @@ def fantasy_movies():
     return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Фантазија")
 
 @app.route('/category/history/', methods=['GET', 'POST'])
+@login_required
 def history_movies():
     movie = Movie()
     discover = Discover()
@@ -232,6 +244,7 @@ def history_movies():
     return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Историја")
 
 @app.route('/category/horror/', methods=['GET', 'POST'])
+@login_required
 def horror_movies():
     movie = Movie()
     discover = Discover()
@@ -242,6 +255,7 @@ def horror_movies():
     return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Хорор")
 
 @app.route('/category/music/', methods=['GET', 'POST'])
+@login_required
 def music_movies():
     movie = Movie()
     discover = Discover()
@@ -252,6 +266,7 @@ def music_movies():
     return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Музични")
 
 @app.route('/category/mystery/', methods=['GET', 'POST'])
+@login_required
 def mystery_movies():
     movie = Movie()
     discover = Discover()
@@ -262,6 +277,7 @@ def mystery_movies():
     return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Мистерија")
 
 @app.route('/category/romance/', methods=['GET', 'POST'])
+@login_required
 def romance_movies():
     movie = Movie()
     discover = Discover()
@@ -272,6 +288,7 @@ def romance_movies():
     return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Романтика")
 
 @app.route('/category/scifi/', methods=['GET', 'POST'])
+@login_required
 def scifi_movies():
     movie = Movie()
     discover = Discover()
@@ -282,6 +299,7 @@ def scifi_movies():
     return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Научна фантастика")
 
 @app.route('/category/thriller/', methods=['GET', 'POST'])
+@login_required
 def thriller_movies():
     movie = Movie()
     discover = Discover()
@@ -292,6 +310,7 @@ def thriller_movies():
     return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Трилер")
 
 @app.route('/category/war/', methods=['GET', 'POST'])
+@login_required
 def war_movies():
     movie = Movie()
     discover = Discover()
@@ -302,6 +321,7 @@ def war_movies():
     return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Војни")
 
 @app.route('/category/western/', methods=['GET', 'POST'])
+@login_required
 def western_movies():
     movie = Movie()
     discover = Discover()
