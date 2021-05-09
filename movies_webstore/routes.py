@@ -142,7 +142,7 @@ def action_movies():
     action2 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 28, 'page': 2})
     movies = action
     movies2 = action2
-    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Акција")
+    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Action")
 
 @app.route('/category/adventure/', methods=['GET', 'POST'])
 @login_required
@@ -153,7 +153,7 @@ def adventure_movies():
     adventure2 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 12, 'page': 2})
     movies = adventure
     movies2 = adventure2
-    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Авантура")
+    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Adventure")
 
 @app.route('/category/animation/', methods=['GET', 'POST'])
 @login_required
@@ -164,7 +164,7 @@ def animation_movies():
     animation2 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 16, 'page': 2})
     movies = animation1
     movies2 = animation2
-    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Анимација")
+    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Animaction")
 
 @app.route('/category/comedy/', methods=['GET', 'POST'])
 @login_required
@@ -175,7 +175,7 @@ def comedy_movies():
     comedy2 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 35, 'page': 2})
     movies = comedy1
     movies2 = comedy2
-    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Комедија")
+    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Comedy")
 
 @app.route('/category/crime/', methods=['GET', 'POST'])
 @login_required
@@ -186,7 +186,7 @@ def crime_movies():
     crime2 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 80, 'page': 2})
     movies = crime1
     movies2 = crime2
-    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Криминалистика")
+    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Crime")
 
 @app.route('/category/documentary/', methods=['GET', 'POST'])
 @login_required
@@ -197,7 +197,7 @@ def documentary_movies():
     documentary2 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 99, 'page': 2})
     movies = documentary1
     movies2 = documentary2
-    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Документарни")
+    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Documentary")
 
 @app.route('/category/drama/', methods=['GET', 'POST'])
 @login_required
@@ -208,7 +208,7 @@ def drama_movies():
     drama2 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 18, 'page': 2})
     movies = drama1
     movies2 = drama2
-    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Драма")
+    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Drama")
 
 @app.route('/category/family/', methods=['GET', 'POST'])
 @login_required
@@ -219,7 +219,7 @@ def family_movies():
     family2 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 10751, 'page': 2})
     movies = family1
     movies2 = family2
-    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Фамилијарни")
+    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Family")
 
 @app.route('/category/fantasy/', methods=['GET', 'POST'])
 @login_required
@@ -230,7 +230,7 @@ def fantasy_movies():
     fantasy2 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 14, 'page': 2})
     movies = fantasy1
     movies2 = fantasy2
-    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Фантазија")
+    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Fantasy")
 
 @app.route('/category/history/', methods=['GET', 'POST'])
 @login_required
@@ -241,7 +241,7 @@ def history_movies():
     history2 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 36, 'page': 2})
     movies = history1
     movies2 = history2
-    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Историја")
+    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="History")
 
 @app.route('/category/horror/', methods=['GET', 'POST'])
 @login_required
@@ -252,7 +252,7 @@ def horror_movies():
     horror2 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 27, 'page': 2})
     movies = horror1
     movies2 = horror2
-    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Хорор")
+    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Horror")
 
 @app.route('/category/music/', methods=['GET', 'POST'])
 @login_required
@@ -263,7 +263,7 @@ def music_movies():
     music2 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 10402, 'page': 2})
     movies = music1
     movies2 = music2
-    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Музични")
+    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Music")
 
 @app.route('/category/mystery/', methods=['GET', 'POST'])
 @login_required
@@ -274,7 +274,7 @@ def mystery_movies():
     mystery2 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 9648, 'page': 2})
     movies = mystery1
     movies2 = mystery2
-    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Мистерија")
+    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Mystery")
 
 @app.route('/category/romance/', methods=['GET', 'POST'])
 @login_required
@@ -285,7 +285,7 @@ def romance_movies():
     romance2 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 10749, 'page': 2})
     movies = romance1
     movies2 = romance2
-    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Романтика")
+    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Romance")
 
 @app.route('/category/scifi/', methods=['GET', 'POST'])
 @login_required
@@ -296,7 +296,7 @@ def scifi_movies():
     scifi2 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 878, 'page': 2})
     movies = scifi1
     movies2 = scifi2
-    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Научна фантастика")
+    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Sci-Fi")
 
 @app.route('/category/thriller/', methods=['GET', 'POST'])
 @login_required
@@ -307,7 +307,7 @@ def thriller_movies():
     thriller2 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 53, 'page': 2})
     movies = thriller1
     movies2 = thriller2
-    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Трилер")
+    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Thriller")
 
 @app.route('/category/war/', methods=['GET', 'POST'])
 @login_required
@@ -318,7 +318,7 @@ def war_movies():
     war2 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 10752, 'page': 2})
     movies = war1
     movies2 = war2
-    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Војни")
+    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="War")
 
 @app.route('/category/western/', methods=['GET', 'POST'])
 @login_required
@@ -329,4 +329,4 @@ def western_movies():
     western2 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 37, 'page': 2})
     movies = western1
     movies2 = western2
-    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Вестерн")
+    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Western")
