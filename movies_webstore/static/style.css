@@ -479,4 +479,25 @@ body{
     padding-left: 10px;
     padding-right: 10px;
   }
+  .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .flex-container > a {
+    display: block;
+    border: 1px solid white;
+    width: 150px;
+    height: 100px;
+    margin: 15px;
+    text-align: center;
+    font-size: 16px;
+    text-decoration: none;
+  }
+  .flex-container > a > div {
+    margin-top: 35px;
+    color: white;
+  }
 }
