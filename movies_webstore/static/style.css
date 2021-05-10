@@ -413,3 +413,21 @@ body{
 .fav_movies{
   margin-left: 20px;
 }
+
+@media only screen and (max-height: 800px) {
+  .movie_detail_img{
+    width: 100%;
+    height: 400px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .movie_detail_img_2{
+    display: block;
+    width: 100%;
+    height: 200px;
+    transform: scale(1);
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+}
