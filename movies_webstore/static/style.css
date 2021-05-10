@@ -483,21 +483,21 @@ body{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
   .flex-container > a {
     display: block;
     border: 1px solid white;
-    width: 150px;
-    height: 100px;
-    margin: 15px;
+    width: 190px;
+    height: 130px;
+    margin: 17px;
     text-align: center;
-    font-size: 16px;
+    font-size: 18px;
     text-decoration: none;
   }
   .flex-container > a > div {
-    margin-top: 35px;
+    margin-top: 45px;
     color: white;
   }
 }
