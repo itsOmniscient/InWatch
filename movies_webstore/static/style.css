@@ -502,7 +502,7 @@ body{
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
   .logo2{
     margin-top: 5px;
     margin-left: 5px;
