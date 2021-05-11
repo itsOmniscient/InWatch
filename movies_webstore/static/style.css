@@ -501,33 +501,3 @@ body{
     color: white;
   }
 }
-@media only screen and (max-device-width: 1350px) {
-  .logo2{
-    margin-top: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    width: 100px;
-    height: 50px;
-  }
-  .navbar_menu{
-    margin-top: 15px;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-  .navbar_menu_contact > a{
-    display: none;
-  }
-  .search-bar{
-    display: none;
-  }
-  .register_nav{
-    margin-top: 15px;
-    position: absolute;
-    right: 0px;
-  }
-  .login_nav{
-    margin-top: 15px;
-    position: absolute;
-    right: 100px;
-  }
-}
