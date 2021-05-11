@@ -502,16 +502,16 @@ body{
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-device-width: 600px) {
   .logo2{
     margin-top: 5px;
     margin-left: 5px;
     margin-right: 5px;
-    width: 70px;
-    height: 30px;
+    width: 100px;
+    height: 50px;
   }
   .navbar_menu{
-    margin-top: 5px;
+    margin-top: 15px;
     margin-left: 10px;
     margin-right: 10px;
   }
@@ -519,16 +519,18 @@ body{
     display: none;
   }
   .search-bar{
-    display: none;
+    margin-top: 15px;
+    margin-left: 5px;
+    width: 60px;
   }
   .register_nav{
-    margin-top: 5px;
+    margin-top: 15px;
     position: absolute;
     right: 0px;
   }
   .login_nav{
-    margin-top: 5px;
+    margin-top: 15px;
     position: absolute;
-    right: 50px;
+    right: 100px;
   }
 }
