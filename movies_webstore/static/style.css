@@ -502,7 +502,7 @@ body{
   }
 }
 
-@media only screen and (max-device-width: 600px) {
+@media only screen and (max-width: 600) {
   .logo2{
     margin-top: 5px;
     margin-left: 5px;
@@ -519,9 +519,7 @@ body{
     display: none;
   }
   .search-bar{
-    margin-top: 15px;
-    margin-left: 5px;
-    width: 60px;
+    display: none;
   }
   .register_nav{
     margin-top: 15px;
