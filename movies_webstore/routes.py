@@ -38,7 +38,7 @@ def get_movie_id():
     jsdata = ""
     if current_user.is_authenticated:
         jsdata = request.form['js_movieID']
-        user = User.query.filter(current_user.username == current_user.username).first()
+        user = current_user
         if (user.favorite_movies == ""):
             user.favorite_movies = jsdata
             db.session.add(user)
@@ -51,13 +51,11 @@ def get_movie_id():
                 user.favorite_movies = ','.join(movieList2)
                 db.session.add(user)
                 db.session.commit()
-                print("Movie deleted from favorites.")
                 return jsdata
             else:
                 user.favorite_movies = user.favorite_movies+","+jsdata
                 db.session.add(user)
                 db.session.commit()
-                print("Movie added to favorites.")
                 return jsdata
     return jsdata
 
