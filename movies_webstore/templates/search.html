@@ -8,7 +8,11 @@
   <a href="/movie/{{ result.id }}/" target="_self"><img class="img-not-found" src="https://image.tmdb.org/t/p/w185_and_h278_bestv2{{ result.poster_path }}" alt="Not Found" onerror=this.src="/static/not-found.png"></a>
   <div class="movie-details">
   <p class="movie-details-text">{{ result.title }}</p>
-  <p class="movie-details-text-search">{{ result.release_date }}</p>
+  {% if result.release_date %}
+    <p class="movie-details-text-search">{{ result.release_date[0:4] }}</p>
+  {% else %}
+    <p class="movie-details-text-search"></p>
+  {% endif %}
   </div>
 </div>
 {% endfor %}

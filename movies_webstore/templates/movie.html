@@ -13,7 +13,11 @@
   <table class="movie-table">
     <tr class="movie-tr">
       <td class="movie-td">Release Date:</td>
-      <td class="movie-td2">{{ m_detail.release_date }}</td>
+      {% if m_detail.release_date %}
+        <td class="movie-td2">{{ m_detail.release_date[0:4] }}</td>
+      {% else %}
+        <td class="movie-td2">No release date</td>
+      {% endif %}
       </tr>
       <tr class="movie-tr">
         <td class="movie-td">Genre:</td>
