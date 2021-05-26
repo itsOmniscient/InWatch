@@ -94,7 +94,11 @@ Everything in one place.
       <div class="width_height">
         <a href="/movie/{{ movie.id }}/" target="_self"><img src="https://image.tmdb.org/t/p/w185_and_h278_bestv2{{ movie.poster_path }}"></a>
         <div class="movie-details">
+          {% if movie.release_date %}
         <p class="movie-details-text">{{ movie.title }} {{ movie.release_date[0:4] }}</p>
+          {% else %}
+            <p class="movie-details-text">{{ movie.title }}</p>
+          {% endif %}
       </div>
       </div>
       {% endfor %}
