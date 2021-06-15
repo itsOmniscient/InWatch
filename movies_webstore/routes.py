@@ -129,182 +129,182 @@ def category_route():
     discover = Discover()
     return render_template('categories.html', movie=movie, discover=discover)
 
-@app.route('/category/action/', methods=['GET', 'POST'])
-def action_movies():
+@app.route('/category/action/<page>', methods=['GET', 'POST'])
+def action_movies(page):
+    reg_item = re.findall('\d',page)
+    page = int(reg_item[0])
     movie = Movie()
     discover = Discover()
-    action = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 28, 'page': 1})
-    action2 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 28, 'page': 2})
+    action = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 28, 'page': page})
     movies = action
-    movies2 = action2
-    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Action")
+    return render_template('category.html', movie=movie, discover=discover, movies=movies, title="action", page=page)
 
-@app.route('/category/adventure/', methods=['GET', 'POST'])
-def adventure_movies():
+@app.route('/category/adventure/<page>', methods=['GET', 'POST'])
+def adventure_movies(page):
+    reg_item = re.findall('\d',page)
+    page = int(reg_item[0])
     movie = Movie()
     discover = Discover()
-    adventure = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 12, 'page': 1})
-    adventure2 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 12, 'page': 2})
+    adventure = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 12, 'page': page})
     movies = adventure
-    movies2 = adventure2
-    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Adventure")
+    return render_template('category.html', movie=movie, discover=discover, movies=movies, title="adventure", page=page)
 
-@app.route('/category/animation/', methods=['GET', 'POST'])
-def animation_movies():
+@app.route('/category/animation/<page>', methods=['GET', 'POST'])
+def animation_movies(page):
+    reg_item = re.findall('\d',page)
+    page = int(reg_item[0])
     movie = Movie()
     discover = Discover()
-    animation1 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 16, 'page': 1})
-    animation2 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 16, 'page': 2})
+    animation1 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 16, 'page': page})
     movies = animation1
-    movies2 = animation2
-    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Animaction")
+    return render_template('category.html', movie=movie, discover=discover, movies=movies, title="animaction", page=page)
 
-@app.route('/category/comedy/', methods=['GET', 'POST'])
-def comedy_movies():
+@app.route('/category/comedy/<page>', methods=['GET', 'POST'])
+def comedy_movies(page):
+    reg_item = re.findall('\d',page)
+    page = int(reg_item[0])
     movie = Movie()
     discover = Discover()
-    comedy1 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 35, 'page': 1})
-    comedy2 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 35, 'page': 2})
+    comedy1 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 35, 'page': page})
     movies = comedy1
-    movies2 = comedy2
-    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Comedy")
+    return render_template('category.html', movie=movie, discover=discover, movies=movies, title="comedy", page=page)
 
-@app.route('/category/crime/', methods=['GET', 'POST'])
-def crime_movies():
+@app.route('/category/crime/<page>', methods=['GET', 'POST'])
+def crime_movies(page):
+    reg_item = re.findall('\d',page)
+    page = int(reg_item[0])
     movie = Movie()
     discover = Discover()
-    crime1 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 80, 'page': 1})
-    crime2 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 80, 'page': 2})
+    crime1 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 80, 'page': page})
     movies = crime1
-    movies2 = crime2
-    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Crime")
+    return render_template('category.html', movie=movie, discover=discover, movies=movies, title="crime", page=page)
 
-@app.route('/category/documentary/', methods=['GET', 'POST'])
-def documentary_movies():
+@app.route('/category/documentary/<page>', methods=['GET', 'POST'])
+def documentary_movies(page):
+    reg_item = re.findall('\d',page)
+    page = int(reg_item[0])
     movie = Movie()
     discover = Discover()
-    documentary1 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 99, 'page': 1})
-    documentary2 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 99, 'page': 2})
+    documentary1 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 99, 'page': page})
     movies = documentary1
-    movies2 = documentary2
-    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Documentary")
+    return render_template('category.html', movie=movie, discover=discover, movies=movies, title="documentary", page=page)
 
-@app.route('/category/drama/', methods=['GET', 'POST'])
-def drama_movies():
+@app.route('/category/drama/<page>', methods=['GET', 'POST'])
+def drama_movies(page):
+    reg_item = re.findall('\d',page)
+    page = int(reg_item[0])
     movie = Movie()
     discover = Discover()
-    drama1 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 18, 'page': 1})
-    drama2 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 18, 'page': 2})
+    drama1 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 18, 'page': page})
     movies = drama1
-    movies2 = drama2
-    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Drama")
+    return render_template('category.html', movie=movie, discover=discover, movies=movies, title="drama", page=page)
 
-@app.route('/category/family/', methods=['GET', 'POST'])
-def family_movies():
+@app.route('/category/family/<page>', methods=['GET', 'POST'])
+def family_movies(page):
+    reg_item = re.findall('\d',page)
+    page = int(reg_item[0])
     movie = Movie()
     discover = Discover()
-    family1 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 10751, 'page': 1})
-    family2 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 10751, 'page': 2})
+    family1 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 10751, 'page': page})
     movies = family1
-    movies2 = family2
-    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Family")
+    return render_template('category.html', movie=movie, discover=discover, movies=movies, title="family", page=page)
 
-@app.route('/category/fantasy/', methods=['GET', 'POST'])
-def fantasy_movies():
+@app.route('/category/fantasy/<page>', methods=['GET', 'POST'])
+def fantasy_movies(page):
+    reg_item = re.findall('\d',page)
+    page = int(reg_item[0])
     movie = Movie()
     discover = Discover()
-    fantasy1 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 14, 'page': 1})
-    fantasy2 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 14, 'page': 2})
+    fantasy1 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 14, 'page': page})
     movies = fantasy1
-    movies2 = fantasy2
-    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Fantasy")
+    return render_template('category.html', movie=movie, discover=discover, movies=movies, title="fantasy", page=page)
 
-@app.route('/category/history/', methods=['GET', 'POST'])
-def history_movies():
+@app.route('/category/history/<page>', methods=['GET', 'POST'])
+def history_movies(page):
+    reg_item = re.findall('\d',page)
+    page = int(reg_item[0])
     movie = Movie()
     discover = Discover()
-    history1 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 36, 'page': 1})
-    history2 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 36, 'page': 2})
+    history1 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 36, 'page': page})
     movies = history1
-    movies2 = history2
-    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="History")
+    return render_template('category.html', movie=movie, discover=discover, movies=movies, title="history", page=page)
 
-@app.route('/category/horror/', methods=['GET', 'POST'])
-def horror_movies():
+@app.route('/category/horror/<page>', methods=['GET', 'POST'])
+def horror_movies(page):
+    reg_item = re.findall('\d',page)
+    page = int(reg_item[0])
     movie = Movie()
     discover = Discover()
-    horror1 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 27, 'page': 1})
-    horror2 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 27, 'page': 2})
+    horror1 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 27, 'page': page})
     movies = horror1
-    movies2 = horror2
-    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Horror")
+    return render_template('category.html', movie=movie, discover=discover, movies=movies, title="horror", page=page)
 
-@app.route('/category/music/', methods=['GET', 'POST'])
-def music_movies():
+@app.route('/category/music/<page>', methods=['GET', 'POST'])
+def music_movies(page):
+    reg_item = re.findall('\d',page)
+    page = int(reg_item[0])
     movie = Movie()
     discover = Discover()
-    music1 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 10402, 'page': 1})
-    music2 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 10402, 'page': 2})
+    music1 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 10402, 'page': page})
     movies = music1
-    movies2 = music2
-    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Music")
+    return render_template('category.html', movie=movie, discover=discover, movies=movies, title="music", page=page)
 
-@app.route('/category/mystery/', methods=['GET', 'POST'])
-def mystery_movies():
+@app.route('/category/mystery/<page>', methods=['GET', 'POST'])
+def mystery_movies(page):
+    reg_item = re.findall('\d',page)
+    page = int(reg_item[0])
     movie = Movie()
     discover = Discover()
-    mystery1 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 9648, 'page': 1})
-    mystery2 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 9648, 'page': 2})
+    mystery1 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 9648, 'page': page})
     movies = mystery1
-    movies2 = mystery2
-    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Mystery")
+    return render_template('category.html', movie=movie, discover=discover, movies=movies, title="mystery", page=page)
 
-@app.route('/category/romance/', methods=['GET', 'POST'])
-def romance_movies():
+@app.route('/category/romance/<page>', methods=['GET', 'POST'])
+def romance_movies(page):
+    reg_item = re.findall('\d',page)
+    page = int(reg_item[0])
     movie = Movie()
     discover = Discover()
-    romance1 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 10749, 'page': 1})
-    romance2 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 10749, 'page': 2})
+    romance1 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 10749, 'page': page})
     movies = romance1
-    movies2 = romance2
-    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Romance")
+    return render_template('category.html', movie=movie, discover=discover, movies=movies, title="romance", page=page)
 
-@app.route('/category/scifi/', methods=['GET', 'POST'])
-def scifi_movies():
+@app.route('/category/scifi/<page>', methods=['GET', 'POST'])
+def scifi_movies(page):
+    reg_item = re.findall('\d',page)
+    page = int(reg_item[0])
     movie = Movie()
     discover = Discover()
-    scifi1 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 878, 'page': 1})
-    scifi2 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 878, 'page': 2})
+    scifi1 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 878, 'page': page})
     movies = scifi1
-    movies2 = scifi2
-    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Sci-Fi")
+    return render_template('category.html', movie=movie, discover=discover, movies=movies, title="scifi", page=page)
 
-@app.route('/category/thriller/', methods=['GET', 'POST'])
-def thriller_movies():
+@app.route('/category/thriller/<page>', methods=['GET', 'POST'])
+def thriller_movies(page):
+    reg_item = re.findall('\d',page)
+    page = int(reg_item[0])
     movie = Movie()
     discover = Discover()
-    thriller1 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 53, 'page': 1})
-    thriller2 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 53, 'page': 2})
+    thriller1 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 53, 'page': page})
     movies = thriller1
-    movies2 = thriller2
-    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Thriller")
+    return render_template('category.html', movie=movie, discover=discover, movies=movies, title="thriller", page=page)
 
-@app.route('/category/war/', methods=['GET', 'POST'])
-def war_movies():
+@app.route('/category/war/<page>', methods=['GET', 'POST'])
+def war_movies(page):
+    reg_item = re.findall('\d',page)
+    page = int(reg_item[0])
     movie = Movie()
     discover = Discover()
-    war1 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 10752, 'page': 1})
-    war2 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 10752, 'page': 2})
+    war1 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 10752, 'page': page})
     movies = war1
-    movies2 = war2
-    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="War")
+    return render_template('category.html', movie=movie, discover=discover, movies=movies, title="war", page=page)
 
-@app.route('/category/western/', methods=['GET', 'POST'])
-def western_movies():
+@app.route('/category/western/<page>', methods=['GET', 'POST'])
+def western_movies(page):
+    reg_item = re.findall('\d',page)
+    page = int(reg_item[0])
     movie = Movie()
     discover = Discover()
-    western1 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 37, 'page': 1})
-    western2 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 37, 'page': 2})
+    western1 = discover.discover_movies({'sort_by': 'popularity.desc', 'with_genres': 37, 'page': page})
     movies = western1
-    movies2 = western2
-    return render_template('category.html', movie=movie, discover=discover, movies=movies, movies2=movies2, title="Western")
+    return render_template('category.html', movie=movie, discover=discover, movies=movies, title="western", page=page)

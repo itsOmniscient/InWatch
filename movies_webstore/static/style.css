@@ -418,6 +418,24 @@ body{
   margin-left: 20px;
 }
 
+.page_li, .page_ul{
+  display: flex;
+  justify-content: center;
+}
+
+.page_a{
+  display: block;
+  text-align: center;
+  width: 150px;
+  color: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin: 0px 10px;
+  background-color: transparent;
+}
+
 @media only screen and (max-height: 800px) {
   .logo2{
     margin-top: 5px;
